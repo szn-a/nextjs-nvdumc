@@ -3,7 +3,7 @@
 export default function Home() {
   return (
     <main>
-      <section className="boxes-container" ref={container}>
+      <section className="boxes-container">
         <h1>Use the button to toggle a Timeline</h1>
         <div>
           <button onClick={toggleTimeline}>Toggle Timeline</button>
