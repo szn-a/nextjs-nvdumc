@@ -1,6 +1,6 @@
-'use client';
 import { useContext } from 'react';
 import { SwitchTransition, Transition } from 'react-transition-group';
+// import { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap/dist/gsap';
 
@@ -13,6 +13,7 @@ const TransitionComponent = ({ children }) => {
   return (
     <SwitchTransition>
       <Transition
+        // key={router.pathname}
         key={pathname}
         timeout={500}
         onEnter={(node) => {

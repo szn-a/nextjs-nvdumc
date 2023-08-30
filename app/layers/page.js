@@ -1,11 +1,12 @@
-'use client';
 import { useContext, useRef, useState } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 
-import { useIsomorphicLayoutEffect } from '../../helpers/isomorphicEffect';
-import TransitionContext from '../../context/TransitionContext';
+import { useIsomorphicLayoutEffect } from '../helpers/isomorphicEffect';
+import TransitionContext from '../context/TransitionContext';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function Layers() {
   const main = useRef();
@@ -33,8 +34,6 @@ export default function Layers() {
   };
 
   useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollToPlugin);
-    gsap.registerPlugin(ScrollTrigger);
     if (!completed) return;
     ctx.add(() => {
       const panels = gsap.utils.toArray('.panel');

@@ -1,15 +1,16 @@
 'use client';
+
+import { useRef } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 
 import { useIsomorphicLayoutEffect } from '../helpers/isomorphicEffect';
-import { useRef } from 'react';
 
-export default function Home() {
-  const container = useRef(null);
+export default function Boxes() {
+  const container = useRef();
   const tl = useRef();
 
   const toggleTimeline = () => {
-    tl.current?.reversed(!tl.current.reversed());
+    tl.current.reversed(!tl.current.reversed());
   };
 
   useIsomorphicLayoutEffect(() => {
