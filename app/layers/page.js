@@ -7,8 +7,6 @@ import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 import { useIsomorphicLayoutEffect } from '../../helpers/isomorphicEffect';
 import TransitionContext from '../../context/TransitionContext';
 
-gsap.registerPlugin(ScrollToPlugin);
-
 export default function Layers() {
   const main = useRef();
   const scrollTween = useRef();
@@ -35,6 +33,8 @@ export default function Layers() {
   };
 
   useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin);
+    gsap.registerPlugin(ScrollTrigger);
     if (!completed) return;
     ctx.add(() => {
       const panels = gsap.utils.toArray('.panel');
