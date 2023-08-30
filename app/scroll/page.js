@@ -3,11 +3,14 @@ import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 
 import { useIsomorphicLayoutEffect } from '../../helpers/isomorphicEffect';
+import { ScrollTrigger } from 'gsap/all';
 
 export default function Scroll() {
   const main = useRef();
 
   useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const ctx = gsap.context((self) => {
       const boxes = self.selector('.box');
       boxes.forEach((box) => {
