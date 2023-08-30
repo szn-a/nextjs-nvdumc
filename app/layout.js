@@ -1,12 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
-import { gsap } from 'gsap/dist/gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 
 const inter = Inter({ subsets: ['latin'] });
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export const metadata = {
   title: 'Create Next App',
