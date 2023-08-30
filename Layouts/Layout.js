@@ -1,3 +1,4 @@
+'use client';
 import { TransitionProvider } from '../context/TransitionContext';
 import Header from '../components/Header';
 import TransitionComponent from '../components/Transition';
