@@ -1,3 +1,4 @@
+'use client';
 import { useContext } from 'react';
 import { SwitchTransition, Transition } from 'react-transition-group';
 import { usePathname } from 'next/navigation';
